@@ -272,7 +272,7 @@ class Game extends React.Component {
     audio.volume = 1;
     audio.play();
 
-    this.showMessage('Eita safado!');
+    this.showMessage('Eita!');
 
     this.blink(null, 100);
   }
