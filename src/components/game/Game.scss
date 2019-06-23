@@ -35,7 +35,8 @@
     background-color: #2E3837;
 
     .output {
-        width: 80%;
+        z-index: 1;
+        width: 60%;
         margin: 20px 0 0 0;
         height: 15%;
         display: flex;
@@ -47,7 +48,8 @@
 
     .startGame {
 
-        height: 20%;
+        height: 20%;z-index: 1;
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
