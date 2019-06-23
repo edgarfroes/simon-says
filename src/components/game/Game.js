@@ -20,6 +20,7 @@ class Game extends React.Component {
       increaseSpeedEachNRounds: 2,
       timesLost: 0,
       timesLostForPrank: 2,
+      hideRestart: false,
       audioCtx: new (window.AudioContext || window.webkitAudioContext)()
     }
 
@@ -245,8 +246,7 @@ class Game extends React.Component {
 
     const blinkCallback = () => {
       this.setState({
-        playing: true,
-        started: true
+        playing: true
       });
 
       this.proceedExecution();
@@ -254,17 +254,22 @@ class Game extends React.Component {
 
     this.setState({
       playing: false,
-      started: false,
       message: 'Iniciando nova partida',
       correctExecution: [],
       currentExecution: [],
       roundTimeout: 400,
+      started: true
     });
 
     this.blink(2, null, blinkCallback);
   }
 
   prank() {
+
+    this.setState({
+      hideRestart: true
+    });
+
     window.addEventListener('beforeunload', (event) => {
       event.returnValue = 'Foge não safado';
     });
@@ -320,8 +325,7 @@ class Game extends React.Component {
       }
 
       this.setState({
-        playing: true,
-        started: true
+        playing: true
       });
 
       this.blink(3, null, blinkCallback);
@@ -335,14 +339,13 @@ class Game extends React.Component {
           <img src={githubcornerpng} alt="GitHub" />
         </a>
         <h1 className="output" dangerouslySetInnerHTML={{ __html: this.state.message }}></h1>
-        <button className=
-          {
-            'startGame' +
-            (this.state.timesLost > 0 && this.state.timesLost % this.state.timesLostForPrank === 0 ? ' lost-prank' : '')
-          }
-          onClick={() => this.start()}>
-          {this.state.started === true ? 'Reiniciar jogo' : 'Iniciar jogo'}
-        </button>
+        <div className="startGame">
+          <button
+            className={(this.state.hideRestart === true ? ' hidden' : '')}
+            onClick={() => this.start()}>
+            {this.state.started === true ? 'Reiniciar jogo' : 'Iniciar jogo'}
+          </button>
+        </div>
         <div className="board-container">
           <Board
             playing={this.state.playing}

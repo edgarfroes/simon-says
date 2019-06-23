@@ -22,7 +22,7 @@
         }
 
         // If needed, add more colors here.
-        $color-collection: (lime, red, DeepSkyBlue, yellow);
+        $color-collection: ('lime', 'red', 'DeepSkyBlue', 'yellow');
 
         @for $i from 0 to 4 {
             &.color-#{$i} {

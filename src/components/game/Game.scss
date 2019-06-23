@@ -6,6 +6,14 @@
         right: 0;
         width: 20%;
 
+        @media screen and (max-width: 400px){
+            width: 35%;
+        }
+
+        @media screen and (min-width: 401px){
+            width: 20%;
+        }
+
         img {
             width: 100%;
             position: absolute;
@@ -24,49 +32,52 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    background-color: white;
-    outline: 20px solid #2E3837;
-    outline-offset: -20px;
+    background-color: #2E3837;
 
     .output {
         width: 80%;
         margin: 20px 0 0 0;
-        height: 25%;
+        height: 15%;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: black;
+        color: white;
         text-align: center;
     }
 
-    .board-container {
-        height: 75%;
+    .startGame {
 
+        height: 20%;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
-        width: 100%;
-    }
+        align-items: center;
 
-    button {
-        &.startGame {
+        button {
             padding: 10px;
-            margin: 0 0 30px 0;
             font-size: 15px;
-            background-color: darkslategray;
-            color: white;
+            background-color: white;
+            color: #2E3837;
             border: none;
             border-radius: 4px;
             outline: none;
             cursor: pointer;
 
             &:hover {
-                background-color: rgba(darkslategray, 0.9)
+                background-color: rgba(white, 0.9)
+            }
+    
+            &.hidden {
+                display: none;
             }
         }
+    }
 
-        &.lost-prank {
-            display: none;
-        }
+    .board-container {
+        height: 65%;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
     }
 }
