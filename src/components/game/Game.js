@@ -2,6 +2,7 @@ import React from 'react';
 import './Game.scss';
 import Board from '../board/Board';
 import losemp3 from '../../assets/lose.mp3';
+import githubcornerpng from '../../assets/github-corner.png';
 
 class Game extends React.Component {
   constructor(props) {
@@ -330,6 +331,9 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
+        <a href="https://github.com/edgarfroes/simon-says" target="_blank" rel="noopener noreferrer" className="github">
+          <img src={githubcornerpng} alt="GitHub" />
+        </a>
         <h1 className="output" dangerouslySetInnerHTML={{ __html: this.state.message }}></h1>
         <button className=
           {

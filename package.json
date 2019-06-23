@@ -2,6 +2,7 @@
   "name": "simon-says",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/simon-says/",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
