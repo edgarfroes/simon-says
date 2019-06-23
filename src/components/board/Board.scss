@@ -1,0 +1,22 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    flex-direction: column;
+    background-color: darkslategray;
+    border: none;
+    border-radius: 15px;
+
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.12);
+-moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.12);
+box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.12);
+
+    .row {
+        .item{
+            display: inline-block;
+            padding: 15px;
+        }
+    }
+}
