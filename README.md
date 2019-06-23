@@ -1,5 +1,7 @@
 Criado com [Create React App](https://github.com/facebook/create-react-app).
 
+Você pode acessar a [demo clicando aqui](https://edgarfroes.github.io/simon-says/)
+
 ## Descrição
 
 Jogo divertido de Simon Says, também conhecido como "Genius", o famoso jogo da memória.
